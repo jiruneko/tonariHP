@@ -10,7 +10,7 @@ export default function Header() {
 
     <Link href="/" className={styles.logoLink}>
       <Image
-        src="/logo.PNG"
+        src="/logo.png"
         alt="となりのきょうしつ"
         width={348}
         height={133}
