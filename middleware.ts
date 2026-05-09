@@ -1,4 +1,5 @@
 // middleware.ts
+
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -7,6 +8,7 @@ export function middleware(req: NextRequest) {
 
   if (basicAuth) {
     const authValue = basicAuth.split(" ")[1];
+
     const [user, password] = atob(authValue).split(":");
 
     if (
@@ -22,7 +24,8 @@ export function middleware(req: NextRequest) {
     {
       status: 401,
       headers: {
-        "WWW-Authenticate": 'Basic realm="Secure Area"',
+        "WWW-Authenticate":
+          'Basic realm="Secure Area"',
       },
     }
   );
