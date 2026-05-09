@@ -1,6 +1,16 @@
+// app/layout.tsx
+
+import type { Metadata } from "next";
+
 import "./globals.css";
+
 import Header from "./_components/Header";
-import Footer from "./_components/Footer"
+import Footer from "./_components/Footer";
+
+export const metadata: Metadata = {
+  title: "となりのきょうしつ",
+  description: "となりのきょうしつ公式サイト",
+};
 
 export default function RootLayout({
   children,
@@ -9,11 +19,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+
       <body>
+
+        {/* =========================
+            Header
+        ========================= */}
+
         <Header />
-        {children}
+
+        {/* =========================
+            Main
+        ========================= */}
+
+        <main>
+          {children}
+        </main>
+
+        {/* =========================
+            Footer
+        ========================= */}
+
         <Footer />
+
       </body>
+
     </html>
   );
 }

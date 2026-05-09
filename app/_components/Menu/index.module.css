@@ -1,32 +1,135 @@
-.items {
-    display: flex;
-    color: #fff;
-    gap: 40px;
+/* index.module.css */
+
+/* =========================
+   PC MENU
+========================= */
+
+.nav {
+  position: absolute;
+
+  top: 32px;
+  right: 40px;
+
+  z-index: 100;
 }
+
+.items {
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.items a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================
+   HAMBURGER DEFAULT
+========================= */
 
 .button {
-    display: none;
+  display: none;
 }
 
+.close {
+  display: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 640px) {
-    .nav {
-        display: none;
-    }
 
-    .nav.open {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--color-border);
-    }
+  /* 通常時は完全非表示 */
+  .nav {
+    display: none;
+  }
 
-    .button {
-        display: flex;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
+  /* ハンバーガー */
+  .button {
+    display: flex;
+
+    position: fixed;
+
+    top: 24px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1100;
+
+    width: 56px;
+    height: 56px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 9999px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    cursor: pointer;
+  }
+
+  /* 開いた時だけ表示 */
+  .nav.open {
+    display: flex;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* SP時のみ縦並び */
+  .nav.open .items {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 32px;
+  }
+
+  .nav.open .items a {
+    font-size: 24px;
+  }
+
+  /* 閉じるボタン */
+  .close {
+    display: block;
+
+    position: absolute;
+
+    top: 24px;
+    right: 24px;
+
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-size: 40px;
+    line-height: 1;
+
+    cursor: pointer;
+  }
 }

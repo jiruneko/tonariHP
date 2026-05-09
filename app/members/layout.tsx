@@ -1,15 +1,9 @@
-import Sheet from "@/app/_components/Sheet";
-import Hero from "../_components/Hero";
-
 type Props = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: Props) {
-    return (
-        <>
-        <Hero title="Members" sub="メンバー" />
-        <Sheet>{children}</Sheet>
-        </>
-    );
+export default function RootLayout({
+  children,
+}: Props) {
+  return <>{children}</>;
 }

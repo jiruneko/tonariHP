@@ -1,55 +1,238 @@
 :root {
-  --font-mono: ui-monospace,
-  Menlo, Monaco, "Cascadia Mono",
-  "Segoe UI Mono",
-  "Roboto Mono", "Oxygen Mono","Ubuntu Monospace",
-  "Source Code Pro",
-  "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --color-text-main: #333;
-  --color-text-sub: #999;
-  --color-text-unpainted: #fff;
-  --color-text-error: #f33;
-  --color-bg-main: #fff;
-  --color-bg-sub: #f3f3f3;
-  --color-bg-code: #fafafa;
-  --color-bg-painted: #333;
-  --color-border-dark: #333;
-  --color-border: #ddd;
-  --color-border-light: #f3f3f3;
-  --color-current: #eee;
-  --colort-button-primary: #333;
-  --border-radius: 4px;
+
+  /* =========================
+     Font
+  ========================= */
+
+  --font-base:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    "Noto Sans JP",
+    "Hiragino Sans",
+    "Yu Gothic",
+    sans-serif;
+
+  --font-mono:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  /* =========================
+     Color
+  ========================= */
+
+  --color-text-main: #222222;
+  --color-text-sub: #666666;
+  --color-text-light: #999999;
+
+  --color-bg-main: #ffffff;
+  --color-bg-sub: #f5f5f5;
+  --color-bg-card: #ffffff;
+
+  --color-border: #e5e5e5;
+
+  --color-primary: #1f3b73;
+  --color-primary-dark: #16284d;
+
+  --color-accent: #4f46e5;
+
+  /* =========================
+     Layout
+  ========================= */
+
+  --container-width: 1100px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --transition:
+    0.3s ease;
 }
 
-* {
+/* =========================
+   Reset
+========================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
+}
+
+html {
+  font-size: 16px;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background:
+    var(--color-bg-sub);
+
+  color:
+    var(--color-text-main);
+
+  font-family:
+    var(--font-base);
+
+  line-height: 1.8;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================
+   Typography
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+p {
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+small {
+  font-size: 0.875rem;
 }
 
-body {
-  font-family:
-  -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-  color: var(--color-text-main);
-  line-height: 1.8;
-}
-
-code {
-  font-family: menlo, inconsolata, monospace;
-}
+/* =========================
+   Link
+========================= */
 
 a {
   color: inherit;
+
   text-decoration: none;
+
+  transition:
+    opacity var(--transition);
 }
 
-ol,
-ul {
+a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   Image
+========================= */
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   List
+========================= */
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
+}
+
+/* =========================
+   Form
+========================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+/* =========================
+   Code
+========================= */
+
+code,
+pre {
+  font-family:
+    var(--font-mono);
+}
+
+pre {
+  overflow-x: auto;
+
+  padding: 1rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    #111111;
+
+  color:
+    #ffffff;
+}
+
+/* =========================
+   Selection
+========================= */
+
+::selection {
+  background:
+    rgba(79, 70, 229, 0.2);
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    #cccccc;
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    #aaaaaa;
 }
