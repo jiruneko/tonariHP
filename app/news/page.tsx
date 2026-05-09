@@ -4,51 +4,37 @@ import styles from "./page.module.css";
 
 const newsList = [
   {
-    id: 1,
-    title: "次世代AI技術の研究開発に向けた新プロジェクト立ち上げ",
-    category: "プレスリリース",
-    date: "2024/02/12",
-    image: "/images/news1.jpg",
+    id: "1",
+    title: "公式ホームページ（β版）を立ち上げました",
+    category: {
+      name: "更新情報",
+    },
+    publishedAt: "2026/04/01",
+    image: "",
   },
   {
-    id: 2,
-    title: "自律走行ロボットの試験運用開始",
-    category: "お知らせ",
-    date: "2024/02/12",
-    image: "/images/news2.jpg",
+    id: "2",
+    title: "三田で教室を始めました",
+    category: {
+      name: "更新情報",
+    },
+    publishedAt: "2026/03/16",
+    image: "",
   },
   {
-    id: 3,
-    title: "新たなパートナーシップの発表",
-    category: "プレスリリース",
-    date: "2024/02/12",
-    image: "/images/news3.jpg",
-  },
-  {
-    id: 4,
-    title: "次世代自律システムの公開セミナー開催",
-    category: "重要",
-    date: "2024/02/12",
-    image: null,
-  },
-  {
-    id: 5,
-    title: "最新製品アップデートのお知らせ",
-    category: "お知らせ",
-    date: "2024/02/12",
-    image: null,
+    id: "3",
+    title: "となりのきょうしつを開設しました",
+    category: {
+      name: "更新情報",
+    },
+    publishedAt: "2026/03/16",
+    image: "",
   },
 ];
 
 export default function Home() {
   return (
     <main className={styles.page}>
-
-      {/* =========================
-          Header
-      ========================= */}
-
-     
 
       {/* =========================
           Hero
@@ -77,6 +63,10 @@ export default function Home() {
               className={styles.newsItem}
             >
 
+              {/* =========================
+                  Image
+              ========================= */}
+
               <div className={styles.newsImage}>
 
                 {item.image ? (
@@ -92,6 +82,10 @@ export default function Home() {
 
               </div>
 
+              {/* =========================
+                  Content
+              ========================= */}
+
               <div className={styles.newsContent}>
 
                 <h2>
@@ -101,11 +95,11 @@ export default function Home() {
                 <div className={styles.newsMeta}>
 
                   <span className={styles.category}>
-                    {item.category}
+                    {item.category.name}
                   </span>
 
                   <span className={styles.date}>
-                    {item.date}
+                    {item.publishedAt}
                   </span>
 
                 </div>
@@ -133,7 +127,7 @@ export default function Home() {
         </div>
 
         <p>
-          © tonarinokyoutitu. All Rights Reserved 2026
+          © tonarinokyoushitsu. All Rights Reserved 2026
         </p>
 
       </footer>
